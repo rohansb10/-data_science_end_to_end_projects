@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Prediction App</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl text-center mb-8 font-bold text-gray-700">Order Prediction App</h1>
+        <form method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Order_Priority">Order Priority</label>
+                <select name="Order_Priority" id="Order_Priority" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Not Specified">Not Specified</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Critical">Critical</option>
+                    <option value="Medium">Medium</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Order_Quantity">Order Quantity</label>
+                <input type="number" name="Order_Quantity" min="1" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Sales">Sales</label>
+                <input type="number" step="0.01" name="Sales" min="0" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Ship_Mode">Ship Mode</label>
+                <select name="Ship_Mode" id="Ship_Mode" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Regular Air">Regular Air</option>
+                    <option value="Express Air">Express Air</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Region">Region</label>
+                <select name="Region" id="Region" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="West">West</option>
+                    <option value="Atlantic">Atlantic</option>
+                    <option value="Northwest Territories">Northwest Territories</option>
+                    <option value="Prarie">Prarie</option>
+                    <option value="Ontario">Ontario</option>
+                    <option value="Nunavut">Nunavut</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Customer_Segment">Customer Segment</label>
+                <select name="Customer_Segment" id="Customer_Segment" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Corporate">Corporate</option>
+                    <option value="Consumer">Consumer</option>
+                    <option value="Home Office">Home Office</option>
+                    <option value="Small Business">Small Business</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Product_Category">Product Category</label>
+                <select name="Product_Category" id="Product_Category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Office Supplies">Office Supplies</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="Product_Container">Product Container</label>
+                <select name="Product_Container" id="Product_Container" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="Small Box">Small Box</option>
+                    <option value="Large Box">Large Box</option>
+                    <option value="Medium Box">Medium Box</option>
+                </select>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Predict
+                </button>
+            </div>
+        </form>
+
+        {% if prediction_text %}
+            <div class="mt-8 p-4 bg-green-100 border-t-4 border-green-500 rounded-b text-green-900">
+                <p>{{ prediction_text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

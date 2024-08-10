@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib  # or pickle
+import joblib 
 from sklearn.preprocessing import RobustScaler
 import sklearn
 

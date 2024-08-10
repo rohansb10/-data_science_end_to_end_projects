@@ -161,4 +161,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 myenv
-Notebook/
+data_science_end_to_end_projects/notebook/app.py

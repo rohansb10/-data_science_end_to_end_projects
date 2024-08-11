@@ -33,8 +33,8 @@ Ensure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/sales-prediction-app.git
-    cd sales-prediction-app
+    git clone https://github.com/rohansb10/-data_science_end_to_end_projects
+    cd -data_science_end_to_end_projects
     ```
 
 2. Install the required Python packages:

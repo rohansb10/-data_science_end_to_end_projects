@@ -162,3 +162,10 @@ cython_debug/
 #.idea/
 myenv  
 django
+data
+gardio_app
+Flask
+notebook
+README.md
+LICENSE
+machine-learning-1

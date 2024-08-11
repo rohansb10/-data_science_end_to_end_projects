@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib 
+import joblib
 from sklearn.preprocessing import RobustScaler
 import sklearn
 
@@ -61,4 +61,6 @@ df['Sales'] = robust_scaler.transform(df[['Sales']])
 if st.button('Predict'):
     predictions = model.predict(df)
     formatted_predictions = [round(pred, 2) for pred in predictions]
-    st.write(f"Predicted Value is {formatted_predictions[0]}")
+
+    # Display the prediction in a larger font
+    st.markdown(f"<h1 style='font-size: 36px; color: #4CAF50;'>Predicted Value is {formatted_predictions[0]}</h1>", unsafe_allow_html=True)
